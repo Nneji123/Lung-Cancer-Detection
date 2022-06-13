@@ -10,6 +10,7 @@ app = FastAPI(
     version="0.1.0", debug=True)
 
 
+model = joblib.load('lung_cancer_predictor_model.pkl')
 @app.get('/')
 def home():
     return {'Title': 'Lung Cancer Prediction API'}
