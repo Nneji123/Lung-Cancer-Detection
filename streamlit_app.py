@@ -1,4 +1,3 @@
-%%writefile app.py
 import streamlit as st
 import requests as re
 import json
