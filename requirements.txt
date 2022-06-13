@@ -1,0 +1,5 @@
+fastapi==0.78.0
+joblib==1.1.0
+numpy==1.21.6
+pydantic==1.9.1
+uvicorn==0.13.1
