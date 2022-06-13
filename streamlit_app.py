@@ -1,30 +1,49 @@
 import streamlit as st
 import requests as re
-import numpy as np
+import json
+
+st.write("""# Lung Cancer Prediction Web App""")
+
+st.image("image.jpg")
+
+st.write("""
+## Problem Statement 
+
+Lung cancer is a type of cancer that begins in the lungs and most often occurs in people who smoke. Two major types of lung cancer are non-small cell lung cancer and small cell lung cancer. Causes of lung cancer include smoking, second-hand smoke, exposure to certain toxins and family history. Symptoms include a cough (often with blood), chest pain, wheezing and weight loss. These symptoms often don't appear until the cancer is advanced. Treatments vary but may include surgery, chemotherapy, radiation therapy, targeted drug therapy and immunotherapy.
+
+In this project I'll build a machine learning model that can help in detecting/predicting lung cancer based on the following features: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc.
+
+Dataset Link:- The dataset used was gotten from this [Google Drive Link]((https://drive.google.com/file/d/1diV8akPbsadSAn0rFzcLB7b3L9lL8Olw/view))
+
+**Made by Ifeanyi Nneji**
+
+The notebook, processed dataset and files(dockerfile, fastapi script, streamlit script) are available on my [GitHub](https://github.com/Nneji123/Lung-Cancer-Prediction)        
+
+""")
+
+st.sidebar.header('User Input Features')
 
 
-def main():
 
-    st.title("Spam Classification")
-    gender = st.number_input("GENDER. Enter 1 for Male and O for Female")
-    age = st.number_input("AGE")
-    smoking = st.number_input("SMOKING")
-    yellow_finger = st.number_input("YELLOW_FINGERS")
-    anxiety = st.number_input("ANXIETY")
-    peer = st.number_input("PEER_PRESSURE")
-    chronic = st.number_input("CHRONIC_DISEASE")
-    fatigue = st.number_input("FATIGUE")
-    allergy = st.number_input("ALLERGY")
-    wheezing = st.number_input("WHEEZING")
-    alcohol =  st.number_input("ALCOHOL_CONSUMPTION")
-    coughing = st.number_input("COUGHING")
-    breath = st.number_input("SHORTNESS_OF_BREATH")
-    swallow =  st.number_input("SWALLOWING_DIFFICULTY")
-    chest =  st.number_input("CHEST_PAIN")
+
+gender = st.sidebar.number_input("GENDER: Enter 1 for Male and O for Female")
+age = st.sidebar.number_input("Enter your Age")
+smoking = st.sidebar.number_input("SMOKING: Enter 1 if you smoke or O if you don't smoke")
+yellow_finger = st.sidebar.number_input("YELLOW FINGERS: Enter 1 if you have yellow fingers or 0 if you don't")
+anxiety = st.sidebar.number_input("ANXIETY: Enter 1 if you have anxiety and 0 if you don't")
+peer = st.sidebar.number_input("PEER PRESSURE: Enter 1 if you feel you suffer from peer pressure or 0 if you don't")
+chronic = st.sidebar.number_input("CHRONIC DISEASE: Enter 1 if you suffer from a chronic disease or O if you don't")
+fatigue = st.sidebar.number_input("FATIGUE: Enter 1 if you have fatigue or 0 if you don't")
+allergy = st.sidebar.number_input("ALLERGY: Enter 1 if you have some sort of allergy or 0 if you don't")
+wheezing = st.sidebar.number_input("WHEEZING: Enter 1 if you wheeze or 0 if you don't")
+alcohol =  st.sidebar.number_input("ALCOHOL CONSUMPTION: Enter 1 if you consume alcohol or 0 if you don't")
+coughing = st.sidebar.number_input("COUGHING: Enter 1 if you cough a lot or 0 if you don't")
+breath = st.sidebar.number_input("SHORTNESS OF BREATH: Enter 1 if you suffer from shortness of breath or 0 if you don't")
+swallow =  st.sidebar.number_input("SWALLOWING DIFFICULTY: Enter 1 if you have difficulty swallowing or 0 if you don't")
+chest =  st.sidebar.number_input("CHEST PAIN: Enter 1 if you have chest pain or 0 if you don't")
    
-    features = np.array([[gender, age, smoking, yellow_finger, anxiety, peer, chronic, fatigue, allergy, wheezing, alcohol, coughing, breath, swallow, chest]])
-    if st.button('Predict'):
-        values =  {
+if st.button('Get Prediction'):
+    values =  {
     "GENDER": gender,
     "AGE": age,
     "SMOKING": smoking,
@@ -41,9 +60,8 @@ def main():
     "SWALLOWING_DIFFICULTY": swallow,
     "CHEST_PAIN": chest
     }
-        res = re.post(f"https://lung-cancer-prediction-api.herokuapp.com/predict/",json=values)
-        with st.spinner('Classifying, please wait....'):
-            st.write(res.json())
+    res = re.post(f"https://lung-cancer-prediction-api.herokuapp.com/predict/",json=values)
+    json_str = json.dumps(res.json())
+    resp = json.loads(json_str)
 
-if __name__ == '__main__':
-    main()
+    st.write(resp[0])
