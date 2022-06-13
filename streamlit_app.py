@@ -1,3 +1,4 @@
+%%writefile app.py
 import streamlit as st
 import requests as re
 import json
@@ -26,22 +27,26 @@ st.sidebar.header('User Input Features')
 
 
 
-gender = st.sidebar.number_input("GENDER: Enter 1 for Male and O for Female")
-age = st.sidebar.number_input("Enter your Age")
-smoking = st.sidebar.number_input("SMOKING: Enter 1 if you smoke or O if you don't smoke")
-yellow_finger = st.sidebar.number_input("YELLOW FINGERS: Enter 1 if you have yellow fingers or 0 if you don't")
-anxiety = st.sidebar.number_input("ANXIETY: Enter 1 if you have anxiety and 0 if you don't")
-peer = st.sidebar.number_input("PEER PRESSURE: Enter 1 if you feel you suffer from peer pressure or 0 if you don't")
-chronic = st.sidebar.number_input("CHRONIC DISEASE: Enter 1 if you suffer from a chronic disease or O if you don't")
-fatigue = st.sidebar.number_input("FATIGUE: Enter 1 if you have fatigue or 0 if you don't")
-allergy = st.sidebar.number_input("ALLERGY: Enter 1 if you have some sort of allergy or 0 if you don't")
-wheezing = st.sidebar.number_input("WHEEZING: Enter 1 if you wheeze or 0 if you don't")
-alcohol =  st.sidebar.number_input("ALCOHOL CONSUMPTION: Enter 1 if you consume alcohol or 0 if you don't")
-coughing = st.sidebar.number_input("COUGHING: Enter 1 if you cough a lot or 0 if you don't")
-breath = st.sidebar.number_input("SHORTNESS OF BREATH: Enter 1 if you suffer from shortness of breath or 0 if you don't")
-swallow =  st.sidebar.number_input("SWALLOWING DIFFICULTY: Enter 1 if you have difficulty swallowing or 0 if you don't")
-chest =  st.sidebar.number_input("CHEST PAIN: Enter 1 if you have chest pain or 0 if you don't")
-   
+gender = st.sidebar.number_input("GENDER: Enter 1 for Male and O for Female", min_value=0, max_value=1)
+age = st.sidebar.number_input("Enter your Age",min_value=1, max_value=100)
+smoking = st.sidebar.number_input("SMOKING: Enter 1 if you smoke or O if you don't smoke", min_value=0, max_value=1)
+yellow_finger = st.sidebar.number_input("YELLOW FINGERS: Enter 1 if you have yellow fingers or 0 if you don't", min_value=0, max_value=1)
+anxiety = st.sidebar.number_input("ANXIETY: Enter 1 if you have anxiety and 0 if you don't", min_value=0, max_value=1)
+peer = st.sidebar.number_input("PEER PRESSURE: Enter 1 if you feel you suffer from peer pressure or 0 if you don't", min_value=0, max_value=1)
+chronic = st.sidebar.number_input("CHRONIC DISEASE: Enter 1 if you suffer from a chronic disease or O if you don't", min_value=0, max_value=1)
+fatigue = st.sidebar.number_input("FATIGUE: Enter 1 if you have fatigue or 0 if you don't", min_value=0, max_value=1)
+allergy = st.sidebar.number_input("ALLERGY: Enter 1 if you have some sort of allergy or 0 if you don't", min_value=0, max_value=1)
+wheezing = st.sidebar.number_input("WHEEZING: Enter 1 if you wheeze or 0 if you don't", min_value=0, max_value=1)
+alcohol =  st.sidebar.number_input("ALCOHOL CONSUMPTION: Enter 1 if you consume alcohol or 0 if you don't", min_value=0, max_value=1)
+coughing = st.sidebar.number_input("COUGHING: Enter 1 if you cough a lot or 0 if you don't", min_value=0, max_value=1)
+breath = st.sidebar.number_input("SHORTNESS OF BREATH: Enter 1 if you suffer from shortness of breath or 0 if you don't", min_value=0, max_value=1)
+swallow =  st.sidebar.number_input("SWALLOWING DIFFICULTY: Enter 1 if you have difficulty swallowing or 0 if you don't", min_value=0, max_value=1)
+chest =  st.sidebar.number_input("CHEST PAIN: Enter 1 if you have chest pain or 0 if you don't", min_value=0, max_value=1)
+
+
+st.markdown("""## Predictions 
+After evaluating 6 different classification algorithms the GradientBoostingClassifier had the best accuracy of 94% and that's the algorithm used to make predictions.
+""")
 if st.button('Get Prediction'):
     values =  {
     "GENDER": gender,
