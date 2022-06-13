@@ -1,4 +1,3 @@
-%%writefile
 from fastapi import FastAPI
 import uvicorn
 import joblib
