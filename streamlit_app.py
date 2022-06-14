@@ -11,13 +11,15 @@ st.write("""
 
 Lung cancer is a type of cancer that begins in the lungs and most often occurs in people who smoke. Two major types of lung cancer are non-small cell lung cancer and small cell lung cancer. Causes of lung cancer include smoking, second-hand smoke, exposure to certain toxins and family history. Symptoms include a cough (often with blood), chest pain, wheezing and weight loss. These symptoms often don't appear until the cancer is advanced. Treatments vary but may include surgery, chemotherapy, radiation therapy, targeted drug therapy and immunotherapy.
 
-In this project I'll build a machine learning model that can help in detecting/predicting lung cancer based on the following features: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc.
+In this project I built a machine learning model that can help in detecting/predicting lung cancer based on the following features: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc. The model was then deployed as an API using the FastAPI framework and then accessed through this interface with Streamlit.
+
+The API and its documentation can be viewed with this [link](https://lung-cancer-api.herokuapp.com/docs)
 
 Dataset Link:- The dataset used was gotten from this [Google Drive Link]((https://drive.google.com/file/d/1diV8akPbsadSAn0rFzcLB7b3L9lL8Olw/view))
 
 **Made by Ifeanyi Nneji**
 
-The notebook, processed dataset and files(dockerfile, fastapi script, streamlit script) are available on my [GitHub](https://github.com/Nneji123/Lung-Cancer-Prediction)        
+The notebook, processed dataset and proper documentation(dockerfiles, fastapi script, streamlit script) are available on my [GitHub](https://github.com/Nneji123/Lung-Cancer-Prediction)        
 
 """)
 
