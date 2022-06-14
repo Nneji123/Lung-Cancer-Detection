@@ -90,13 +90,17 @@ public_url
 ```
 
 ## Running on Local Machine
-For testing a **docker-compose.yml** file has been included so as to run both the API and Streamlit app simultaneously as docker containers. To run the API and the Streamlit app on your local machine do the following:
+
+Since we have multiple containers communcating with each other, I created a bridge network called AIservice. For testing a **docker-compose.yml** file has been included so as to run both the API and Streamlit app simultaneously as docker containers. To run the API and the Streamlit app on your local machine do the following:
 1. Clone the repository to your local machine
 2. Install docker and docker-compose if you haven't
 3. Open a bash/cmd in the directory and run:
+```
+docker network create AIservice
+```
+4. Then run this command
 ```docker
-docker-compose build
-docker-compose up
+docker-compose up -d --build
 ```
 4. After the above steps have been carried out you can now view the documentation of the API and also the Streamlit app.
 
@@ -127,7 +131,7 @@ git clone https://github.com/Nneji123/Lung-Cancer-Prediction.git
 cd Lung-Cancer-Prediction
 ```
 
-4. Create the heroku app
+3. Create the heroku app
 
 ``` 
 heroku create your-app-name 
