@@ -64,7 +64,7 @@ if st.button('Get Prediction'):
     "SWALLOWING_DIFFICULTY": swallow,
     "CHEST_PAIN": chest
     }
-    res = re.post(f"https://lung-cancer-prediction-api.herokuapp.com/predict/",json=values)
+    res = re.post(f"https://lung-cancer-api.herokuapp.com/predict/",json=values)
     json_str = json.dumps(res.json())
     resp = json.loads(json_str)
 
