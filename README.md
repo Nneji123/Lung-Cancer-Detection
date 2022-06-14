@@ -25,7 +25,7 @@ The API and its documentation can be viewed [here](https://lung-cancer-api.herok
 ## Data Preparation
 The original dataset contains 16 columns and 310 rows with the "GENDER" and "LUNG_CANCER" columns containing object data types while the rest of the columns were integer datatypes.
 
-The data was the clean and processed for modelling by changing the following:
+The data was then cleaned and processed for modelling by changing the following:
 - The values "M" and "F" in the "GENDER column were converted to 1 and 0 respectively.
 - The values "YES" and "NO" in the "LUNG_CANCER" column were converted to 1 and 0 respectively.
 - The values "2" and "1" in the rest of the columns were converted to 1 and 0 respectively.
