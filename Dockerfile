@@ -1,13 +1,20 @@
 FROM python:3.8-slim-buster
 
-COPY requirements.txt app/requirements.txt
-
 WORKDIR /app
 
-RUN pip install -r requirements.txt
+RUN apt-get -y update  && apt-get install -y \
+  python3-dev \
+  apt-utils \
+  python-dev \
+  build-essential \
+&& rm -rf /var/lib/apt/lists/*
 
-COPY . /app
+RUN pip install --upgrade setuptools 
+    
 
-EXPOSE 8000
+COPY requirements_api.txt .
+RUN pip install -r requirements_api.txt
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+COPY . .
+
+CMD gunicorn -w 3 -k uvicorn.workers.UvicornWorker app:app --bind 0.0.0.0:$PORT
