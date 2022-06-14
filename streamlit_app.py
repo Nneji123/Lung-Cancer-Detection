@@ -13,14 +13,10 @@ Lung cancer is a type of cancer that begins in the lungs and most often occurs i
 
 In this project I built a machine learning model that can help in detecting/predicting lung cancer based on the following features: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc. The model was then deployed as an API using the FastAPI framework and then accessed through this interface with Streamlit.
 
-The API and its documentation can be viewed with this [link](https://lung-cancer-api.herokuapp.com/docs)
-
-Dataset Link:- The dataset used was gotten from this [Google Drive Link]((https://drive.google.com/file/d/1diV8akPbsadSAn0rFzcLB7b3L9lL8Olw/view))
-
-**Made by Ifeanyi Nneji**
-
 The notebook, processed dataset and proper documentation(dockerfiles, fastapi script, streamlit script) are available on my [GitHub](https://github.com/Nneji123/Lung-Cancer-Prediction)        
 
+
+**Made by Ifeanyi Nneji**
 """)
 
 st.sidebar.header('User Input Features')
@@ -28,9 +24,9 @@ st.sidebar.header('User Input Features')
 
 
 
-gender = st.sidebar.number_input("GENDER: Enter 1 for Male and O for Female", min_value=0, max_value=1)
-age = st.sidebar.number_input("Enter your Age",min_value=1, max_value=100)
-smoking = st.sidebar.number_input("SMOKING: Enter 1 if you smoke or O if you don't smoke", min_value=0, max_value=1)
+gender = st.sidebar.number_input("GENDER: Enter 1 for Male and 0 for Female", min_value=0, max_value=1)
+age = st.sidebar.number_input("AGE: Enter your Age",min_value=1, max_value=100)
+smoking = st.sidebar.number_input("SMOKING: Enter 1 if you smoke or 0 if you don't smoke", min_value=0, max_value=1)
 yellow_finger = st.sidebar.number_input("YELLOW FINGERS: Enter 1 if you have yellow fingers or 0 if you don't", min_value=0, max_value=1)
 anxiety = st.sidebar.number_input("ANXIETY: Enter 1 if you have anxiety and 0 if you don't", min_value=0, max_value=1)
 peer = st.sidebar.number_input("PEER PRESSURE: Enter 1 if you feel you suffer from peer pressure or 0 if you don't", min_value=0, max_value=1)
