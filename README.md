@@ -1,4 +1,4 @@
-# Lung Cancer Prediction App with FastAPI, Streamlit and Docker
+# Lung Cancer Detection App built with Streamlit, FastAPI and Docker
 
 [![Language](https://img.shields.io/badge/Python-darkblue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
 [![Framework](https://img.shields.io/badge/sklearn-darkorange.svg?style=flat&logo=scikit-learn&logoColor=white)](http://www.pytorch.org/news.html)
@@ -15,7 +15,10 @@ A Machine Learning Project to predict if someone has Lung Cancer or not. Built w
 ## Problem Statement
 Lung cancer is a type of cancer that begins in the lungs and most often occurs in people who smoke. Two major types of lung cancer are non-small cell lung cancer and small cell lung cancer. Causes of lung cancer include smoking, second-hand smoke, exposure to certain toxins and family history. Symptoms include a cough (often with blood), chest pain, wheezing and weight loss. These symptoms often don't appear until the cancer is advanced. Treatments vary but may include surgery, chemotherapy, radiation therapy, targeted drug therapy and immunotherapy.
 
-The aim of this project was to build a **machine learning model** that can help in detecting/predicting lung cancer based on the following features: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc and then create an API using **FastAPI** framework and also access the API through a frontend interface such as **Streamlit.**
+ 
+In this project I built a streamlit app that can help in detecting lung cancer in patients based on the following criteria: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc.  
+  
+​The machine learning model used for this app was deployed as an API using the FastAPI framework and then accessed through a frontend interface with Streamlit.
 
 The Streamlit App can be viewed [through this link](https://share.streamlit.io/nneji123/lung-cancer-prediction/main)
 
