@@ -101,7 +101,7 @@ public_url
 
 ## Running on Local Machine :computer:
 
-Since we have multiple containers communcating with each other, I created a bridge network called AIservice. For testing a **docker-compose.yml** file has been included so as to run both the API and Streamlit app simultaneously as docker containers. To run the API and the Streamlit app on your local machine do the following:
+Since we have multiple containers communcating with each other, I created a bridge network called AIservice. For testing, a **docker-compose.yml** file has been included so as to run both the API and Streamlit app simultaneously as docker containers. To run the API and the Streamlit app on your local machine do the following:
 1. Clone the repository to your local machine
 2. Install docker and docker-compose if you haven't
 3. Open a bash/cmd in the directory and run:
