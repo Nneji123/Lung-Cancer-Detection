@@ -6,7 +6,7 @@ from pydantic import BaseModel
 
 app = FastAPI(
     title="Lung Cancer Prediction API",
-    description="""An API Machine Learning model that can help in detecting/predicting lung cancer based on the following features: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc.""",
+    description="""An API Machine Learning model that can help in detecting lung cancer based on the following features: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc.""",
     version="0.1.0", debug=True)
 
 
