@@ -112,7 +112,7 @@ docker network create AIservice
 ```docker
 docker-compose up -d --build
 ```
-4. After the above steps have been carried out you can now view the documentation of the API and also the Streamlit app.
+5. After the above steps have been carried out you can now view the documentation of the API and also the Streamlit app.
 
 To visit the FastAPI documentation go to http://localhost:8000 with a web browser.
 
