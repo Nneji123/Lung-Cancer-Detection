@@ -116,7 +116,7 @@ docker-compose up -d --build
 
 To visit the FastAPI documentation go to http://localhost:8000 with a web browser.
 
-To visit the streamlit UI, visit http://localhost:8501.
+To visit the Streamlit UI, visit http://localhost:8501.
 
 Logs can be inspected via:
 ```
