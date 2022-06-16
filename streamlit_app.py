@@ -24,7 +24,7 @@ st.sidebar.header('User Input Features')
 
 
 gender = st.sidebar.number_input("GENDER: Enter 1 for Male and 0 for Female", min_value=0, max_value=1)
-age = st.sidebar.number_input("AGE: Enter your Age",min_value=1, max_value=100)
+age = st.sidebar.slider("AGE: Enter your Age", min_value=1, max_value=100)
 smoking = st.sidebar.number_input("SMOKING: Enter 1 if you smoke or 0 if you don't smoke", min_value=0, max_value=1)
 yellow_finger = st.sidebar.number_input("YELLOW FINGERS: Enter 1 if you have yellow fingers or 0 if you don't", min_value=0, max_value=1)
 anxiety = st.sidebar.number_input("ANXIETY: Enter 1 if you have anxiety and 0 if you don't", min_value=0, max_value=1)
