@@ -11,7 +11,11 @@ st.write("""
 
 Lung cancer is a type of cancer that begins in the lungs and most often occurs in people who smoke. Two major types of lung cancer are non-small cell lung cancer and small cell lung cancer. Causes of lung cancer include smoking, second-hand smoke, exposure to certain toxins and family history. Symptoms include a cough (often with blood), chest pain, wheezing and weight loss. These symptoms often don't appear until the cancer is advanced. Treatments vary but may include surgery, chemotherapy, radiation therapy, targeted drug therapy and immunotherapy.
 
+<<<<<<< HEAD
 This Streamlit App utilizes Machine Learning in order to detect lung cancer in patients based on the following criteria: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc. 
+=======
+This is a Streamlit app that utilizes Machine Learning in order to detect lung cancer in patients based on the following criteria: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc. 
+>>>>>>> 7ca8d5a (adjusted the context of the messages)
 
 The machine learning model used for this app was deployed as an API using the FastAPI framework and then accessed through this interface with Streamlit.
 
