@@ -2,19 +2,20 @@ import streamlit as st
 import requests as re
 import json
 
-st.write("""# Lung Cancer Prediction Web App""")
+st.write("""# Lung Cancer Detection Web App""")
 
 st.image("image.jpg")
 
 st.write("""
-## Problem Statement 
+## About
 
 Lung cancer is a type of cancer that begins in the lungs and most often occurs in people who smoke. Two major types of lung cancer are non-small cell lung cancer and small cell lung cancer. Causes of lung cancer include smoking, second-hand smoke, exposure to certain toxins and family history. Symptoms include a cough (often with blood), chest pain, wheezing and weight loss. These symptoms often don't appear until the cancer is advanced. Treatments vary but may include surgery, chemotherapy, radiation therapy, targeted drug therapy and immunotherapy.
 
-In this project I built a machine learning model that can help in detecting/predicting lung cancer based on the following features: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc. The model was then deployed as an API using the FastAPI framework and then accessed through this interface with Streamlit.
+This is a Sstreamlit app that utilizes Machine Learning in order to detect lung cancer in patients based on the following criteria: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc. 
 
-The notebook, processed dataset and proper documentation(dockerfiles, fastapi script, streamlit script) are available on my [GitHub](https://github.com/Nneji123/Lung-Cancer-Prediction)        
+The machine learning model used for this app was deployed as an API using the FastAPI framework and then accessed through this interface with Streamlit.
 
+The notebook, processed dataset, model and proper documentation(dockerfiles, fastapi script, streamlit script) are available on my [GitHub](https://github.com/Nneji123/Lung-Cancer-Prediction)        
 
 **Made by Ifeanyi Nneji**
 """)
@@ -41,11 +42,10 @@ swallow =  st.sidebar.number_input("SWALLOWING DIFFICULTY: Enter 1 if you have d
 chest =  st.sidebar.number_input("CHEST PAIN: Enter 1 if you have chest pain or 0 if you don't", min_value=0, max_value=1)
 
 
-st.markdown("""## Predictions 
-After evaluating 6 different classification algorithms the GradientBoostingClassifier had the best accuracy of 94% and that's the algorithm used to make predictions.
-""")
-if st.button('Get Prediction'):
+
+if st.button('Detection Result'):
     values =  {
+    
     "GENDER": gender,
     "AGE": age,
     "SMOKING": smoking,
@@ -62,7 +62,7 @@ if st.button('Get Prediction'):
     "SWALLOWING_DIFFICULTY": swallow,
     "CHEST_PAIN": chest
     }
-    res = re.post(f"https://lung-cancer-api.herokuapp.com/predict/",json=values)
+    res = re.post(f"https://lung-cancer-prediction-api.herokuapp.com/predict",json=values)
     json_str = json.dumps(res.json())
     resp = json.loads(json_str)
 
