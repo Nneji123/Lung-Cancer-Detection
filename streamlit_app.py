@@ -11,16 +11,15 @@ st.write("""
 
 Lung cancer is a type of cancer that begins in the lungs and most often occurs in people who smoke. Two major types of lung cancer are non-small cell lung cancer and small cell lung cancer. Causes of lung cancer include smoking, second-hand smoke, exposure to certain toxins and family history. Symptoms include a cough (often with blood), chest pain, wheezing and weight loss. These symptoms often don't appear until the cancer is advanced. Treatments vary but may include surgery, chemotherapy, radiation therapy, targeted drug therapy and immunotherapy.
 
-**This Streamlit App utilizes Machine Learning API in order to detect lung cancer in patients based on the following criteria: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc.** 
+**This Streamlit App utilizes a Machine Learning API in order to detect lung cancer in patients based on the following criteria: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc.** 
 
-The notebook, processed dataset, model and proper documentation(dockerfiles, fastapi script, streamlit script) are available on my [GitHub](https://github.com/Nneji123/Lung-Cancer-Prediction)        
+The notebook, processed dataset, model and documentation(dockerfiles, fastapi script, streamlit script) are available on my [GitHub.](https://github.com/Nneji123/Lung-Cancer-Prediction)        
 
 **Made by Ifeanyi Nneji**
 """)
 
+
 st.sidebar.header('User Input Features')
-
-
 
 
 gender = st.sidebar.number_input("GENDER: Enter 1 for Male and 0 for Female", min_value=0, max_value=1)
