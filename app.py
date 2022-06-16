@@ -5,12 +5,13 @@ import numpy as np
 from pydantic import BaseModel
 
 app = FastAPI(
-    title="Lung Cancer Prediction API",
-    description="""An API Machine Learning model that can help in detecting lung cancer based on the following features: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc.""",
+    title="Lung Cancer Detection API",
+    description="""An API that utilises a Machine Learning model that can help in detecting lung cancer based on the following features: age, gender, blood pressure, smoke, coughing, allergies, fatigue etc.""",
     version="0.1.0", debug=True)
 
 
 model = joblib.load('lung_cancer_predictor_model.pkl')
+
 @app.get('/')
 def home():
     return {'Title': 'Lung Cancer Prediction API'}
@@ -40,6 +41,6 @@ def predict(data : LungCancer):
 
     predictions = model.predict(features)
     if predictions == 1:
-        return {"This Person has lung cancer"}
+        return {"This Person has a very high chance of having lung cancer. Please contact a Doctor."}
     elif predictions == 0:
-        return {"This Person does not have long cancer"}
+        return {"This probability of this person having lung cancer is very low."}
